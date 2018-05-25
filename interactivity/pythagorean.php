@@ -16,4 +16,4 @@ $form->addField('a', 'a = ');
 $form->addField('b', 'b = ');
 
 $col_right->add('Text')->addParagraph('Using calculation c = sqrt(a * a + b * b):');
-$col_right->add(['Label', 'c =', 'detail' => '?']);
+$col_right->add(['Label', 'c =', 'detail' => rand(1,50)]);
