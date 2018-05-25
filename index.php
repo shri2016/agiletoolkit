@@ -17,6 +17,13 @@ $app->add('Text')
     ->addParagraph('You have successfully installed Agile Toolkit '.$app->version)
     ->addParagraph('Open index.php file in your text editor and follow documentation.');
 
+    
+$button = $app->add(['Button', 16]);
+$button->icon = 'book';
+$button->addClass('blue');
+
+
+
 $app->add(['Button', 'icon'=>'dashboard'])
     ->addClass('primary')
     ->set('Admin')
