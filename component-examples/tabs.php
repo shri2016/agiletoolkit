@@ -14,7 +14,7 @@ $tab->addTab('Static Tab')->add('LoremIpsum');
 
 $tab->addTab('Dynamic form with text', function ($tab) {
     sleep(2);
-    $tab->add(['LoremIpsum', 'size' => 2]);
+    $tab->add(['LoremIpsum', 'size' => 5]);
 });
 
 $tab->addTab('Dynamic Form', function ($tab) {

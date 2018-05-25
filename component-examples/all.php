@@ -2,7 +2,7 @@
 
 $app->add(['ui'=>'divider']);
 
-$header_5 = $app->add(['Header','Another components','size'=>1]);
+$header_5 = $app->add(['Header','Other components','size'=>1])->addClass('purple');
 
 $button_to_label = $app->add(['Button','Labels','huge red'])->link(['label']);
 $button_to_button = $app->add(['Button','Buttons','huge teal'])->link(['index']);
