@@ -9,4 +9,4 @@ $text->addParagraph("You have to pick a number in interval 1-100. Next you press
 
 
 $button = $app->add(['Button', "Start game!", 'iconRight'=>'smile']);
-$button->set(['primary'=>true]);
+$button->set(['primary'=>true])->link(['guess2', 'min'=>1, 'max'=>100]);

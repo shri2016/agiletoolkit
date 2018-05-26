@@ -1,8 +1,8 @@
 <?php
 require'init.php';
 
-$max = 100;
-$min = 1;
+$max = $_GET['max'];
+$min = $_GET['min'];
 $number = round(($max + $min) / 2);
 
 
@@ -16,20 +16,21 @@ $app->add([
     'Yes, that\'s it!',
     'primary',
     'icon'=>'empty star',
-]);
+])->link(['guess3', 'number'=>$number]);
 
 $app->add([
     'Button',
     'No, it\'s smaller.',
     'icon'=>'arrow down',
-]);
+])->link(['max'=>$number-1, 'min'=>$min]);
 
 $app->add([
     'Button',
     'No, it\'s bigger.',
     'icon'=>'arrow up'
-]);
+])->link(['max'=>$max, 'min'=>$number+1]);
 
 $app->add(['ui'=>'divider']);
 
-$app->add(['Button', 'Play again.', 'basic', 'icon'=>'refresh']);
+$app->add(['Button', 'Play again.', 'basic', 'icon'=>'refresh'])
+    ->link(['guess1']);
