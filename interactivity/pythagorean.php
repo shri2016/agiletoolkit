@@ -14,6 +14,17 @@ $col_left->add(['Image', 'pythagorean.png']);
 $form = $col_mid->add('Form');
 $form->addField('a', 'a = ');
 $form->addField('b', 'b = ');
+$form->buttonSave->set('Calculate');
 
-$col_right->add('Text')->addParagraph('Using calculation c = sqrt(a * a + b * b):');
-$col_right->add(['Label', 'c =', 'detail' => rand(1,50)]);
+$form->onSubmit(function($form) use($col_right) {
+    $a = $form->model['a'];
+    $b = $form->model['b'];
+    $c = round(sqrt($a*$a + $b*$b),2);
+    return $col_right->jsReload(['c'=>$c]);
+});
+
+if (isset($_GET['c'])) {
+
+    $col_right->add('Text')->addParagraph('Using calculation c = sqrt(a * a + b * b):');
+    $col_right->add(['Label', 'c =', 'detail' => $_GET['c']]);
+}
